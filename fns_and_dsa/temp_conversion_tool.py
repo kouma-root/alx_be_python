@@ -33,7 +33,7 @@ if type(convert) == "int" :
             print("Invalid input. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
 
 else:
-    print("Invalid temperature. Please enter a numeric temperature value.")
+    print("Invalid temperature. Please enter a numeric value.")
 
 
 
