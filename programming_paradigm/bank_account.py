@@ -12,11 +12,11 @@ class BankAccount:
         if amount > self.account_balance :
             return False
         else :
-            self.account_balance -= amount
+            self.account_balance -= famount
             return True
         
         
     def display_balance(self) :
-        print(f"Current Balance: ${float(self.account_balance)}")
+        print(f"Current Balance: ${format(float(self.account_balance),".2f")}")
         
         
