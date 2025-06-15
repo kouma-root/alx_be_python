@@ -5,8 +5,8 @@ class Book:
         self.author = author
         self.__is_checked_out = 0
     def return_book(self):
-        if self.__is_checked_out == 1:
-            self.__is_checked_out = 0
+        if self.__is_checked_out == True:
+            self.__is_checked_out = False
             print(f"{self.title} has been returned.")
         else:
             print(f"{self.title} is not checked out.")
