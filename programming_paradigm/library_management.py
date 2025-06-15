@@ -15,25 +15,25 @@ class Book:
 
 class Library:
     def __init__(self):
-        self.__book = []
-        self.__checked_out_books = []
+        self._book = []
+        self._checked_out_books = []
     def add_book(self, book):
         if isinstance(book, Book):
-            self.__book.append(book)
+            self._book.append(book)
         else:
             raise TypeError("Only Book instances can be added to the library.")
     def list_available_books(self):
-        available_books = [book for book in self.__book if book._Book__is_checked_out == 0]
+        available_books = [book for book in self._book if book._Book__is_checked_out == 0]
         if not available_books:
             print("No books available.")
         else:
             for book in available_books:
                 print(f"{book.title} by {book.author}")
     def check_out_book(self, title):
-        for book in self.__book:
+        for book in self._book:
             if book.title == title and book._Book__is_checked_out == 0:
                 book._Book__is_checked_out = 1
-                self.__checked_out_books.append(book)
+                self._checked_out_books.append(book)
                 print(f"Checked out: {book.title}")
                 return
         print(f"Book '{title}' is not available for checkout.")
@@ -41,6 +41,6 @@ class Library:
         for book in self.__checked_out_books:
             if book.title == title:
                 book.return_book()
-                self.__checked_out_books.remove(book)
+                self._checked_out_books.remove(book)
                 return
         print(f"Book '{title}' was not checked out from this library.") 
