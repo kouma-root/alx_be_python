@@ -4,6 +4,12 @@ class Book:
         self.title = title
         self.author = author
         self.__is_checked_out = 0
+    def return_book(self):
+        if self.__is_checked_out == 1:
+            self.__is_checked_out = 0
+            print(f"{self.title} has been returned.")
+        else:
+            print(f"{self.title} is not checked out.")
         
 
 
@@ -34,14 +40,7 @@ class Library:
     def return_book(self, title):
         for book in self.__checked_out_books:
             if book.title == title:
-                book._Book__is_checked_out = 0
+                book.return_book()
                 self.__checked_out_books.remove(book)
-                print(f"Returned: {book.title}")
                 return
-        print(f"Book '{title}' was not checked out from this library.")
-    def is_checked_out(self):
-        return any(book._Book__is_checked_out == 1 for book in self.__book)
-    def get_checked_out_books(self):
-        return [book for book in self.__checked_out_books if book._Book__is_checked_out == 1]
-        # Initialize the book as not checked out
-        self.__is_checked_out = 0       
+        print(f"Book '{title}' was not checked out from this library.") 
