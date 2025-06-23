@@ -19,7 +19,7 @@ class Library:
     def __init__(self, books=None) -> None:
         if books is None:
             books = []
-        self.books = books
+        self.books = []
         
     def add_book(self, book):
         self.books.append(book)
