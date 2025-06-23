@@ -23,6 +23,9 @@ class Library:
         
     def add_book(self, book):
         self.books.append(book)
+        
+    def __str__(self) -> str:
+        return f"Library with {len(self.books)} books."
     
     def list_books(self):
         for book in self.books:
